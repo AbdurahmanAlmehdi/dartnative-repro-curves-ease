@@ -1,5 +1,7 @@
 # Repro: `Curves.ease` is `easeInOut`, not Flutter's `ease`
 
+Issue: https://github.com/DartNative/dartnative/issues/70
+
 In DartNative 1.0.0 `Curves.ease` exists but is the same curve as `Curves.easeInOut`; its doc comment says the ease-in-out curve "stands in for Flutter's slightly different cubic". Flutter's `Curves.ease` is `Cubic(0.25, 0.1, 0.25, 1.0)` (CSS `ease`): a quick start and a long ease-out. Code ported from Flutter compiles but animates differently, slower off the mark, and there is no `Cubic` class to define the real curve.
 
 ## Run
